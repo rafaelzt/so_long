@@ -4,6 +4,7 @@
 [So_Long - sample](https://github.com/madebypixel02/so_long/)<br>
 [A comprehensive guide](https://reactive.so/post/42-a-comprehensive-guide-to-so_long/)<br>
 [XLib - Events](https://tronche.com/gui/x/xlib/events/types.html)<br>
+[Open Game Art](https://opengameart.org/)
 
 # MiniLibX
 
