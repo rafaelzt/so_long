@@ -17,3 +17,12 @@ sudo yum install -y libXext-devel libX11-devel libXrandr-devel libXinerama-devel
 sudo apt update
 sudo apt install -y libxext-dev libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libbsd-dev xdotool
 ```
+
+### Install MinilibX
+
+    - no installation script is provided. You may want to install
+	```
+        libmlx.a and/or libmlx_$(HOSTTYPE).a in /usr/X11/lib or /usr/local/lib
+        mlx.h in /usr/X11/include or /usr/local/include
+        man/man3/mlx*.1 in /usr/X11/man/man3 or /usr/local/man/man3
+	```
