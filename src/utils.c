@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rzamolo- <rzamolo-@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: rzamolo- <rzamolo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 15:20:46 by rzamolo-          #+#    #+#             */
-/*   Updated: 2024/11/02 20:27:40 by rzamolo-         ###   ########.fr       */
+/*   Updated: 2025/02/19 22:25:41 by rzamolo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,15 @@
 // 	return (img);
 // }
 
+/**
+ * Frees the memory allocated for a 2D map array.
+ *
+ * This function takes a 2D array of strings (char **) representing a map, and
+ * frees the memory allocated for each row of the map, as well as the memory
+ * allocated for the map array itself.
+ *
+ * @param map The 2D array of strings representing the map to be freed.
+ */
 void	ft_free_map(char **map)
 {
 	int	i;
@@ -36,6 +45,15 @@ void	ft_free_map(char **map)
 	free(map);
 }
 
+/**
+ * Counts the number of lines in a given string.
+ *
+ * This function takes a string `map` and counts the number of newline characters
+ * ('\n') in the string, which corresponds to the number of lines in the map.
+ *
+ * @param map The string to count the number of lines in.
+ * @return The number of lines in the given string.
+ */
 size_t	ft_count_line(char *map)
 {
 	size_t	i;
@@ -62,6 +80,14 @@ size_t	ft_lenarr(char **map)
 	return (i);
 }
 
+/**
+ * Prints an error message and exits the program.
+ *
+ * This function takes a string `str` and prints it to stderr using the `perror`
+ * function. It then exits the program with a status of 1.
+ *
+ * @param str The error message to be printed.
+ */
 void	ft_error(char *str)
 {
 	perror(str);

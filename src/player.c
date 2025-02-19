@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rzamolo- <rzamolo-@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: rzamolo- <rzamolo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 20:20:26 by rzamolo-          #+#    #+#             */
-/*   Updated: 2024/11/02 21:11:58 by rzamolo-         ###   ########.fr       */
+/*   Updated: 2025/02/19 22:27:21 by rzamolo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
+
 
 int	ft_right(t_game *game)
 {
