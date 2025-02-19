@@ -6,7 +6,7 @@
 /*   By: rzamolo- <rzamolo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 14:44:22 by rzamolo-          #+#    #+#             */
-/*   Updated: 2025/02/19 22:28:47 by rzamolo-         ###   ########.fr       */
+/*   Updated: 2025/02/19 22:35:45 by rzamolo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,8 @@ void	ft_is_rectangle(char **lines, size_t len)
 }
 
 /**
- * Reads the contents of a file descriptor and returns a string representing the map.
+ * Reads the contents of a file descriptor and returns a string representing the
+ *  map.
  *
  * This function reads the contents of the file descriptor `fd` and concatenates
  * the read bytes into a single string, which is then returned. The function
@@ -127,8 +128,8 @@ char	*ft_create_map(int fd)
 /**
  * Checks the file extension of the given file.
  *
- * This function checks if the file extension of the given file is ".ber". If the
- * extension is not ".ber", it calls the `ft_error` function with the error
+ * This function checks if the file extension of the given file is ".ber". If 
+ * the extension is not ".ber", it calls the `ft_error` function with the error
  * message "Invalid file extension!".
  *
  * @param file The file path to check the extension of.
@@ -151,12 +152,15 @@ void	ft_check_ext(const char *file)
  *
  * This function performs the following tasks:
  * 1. Checks the file extension of the given file to ensure it is a ".ber" file.
- * 2. Opens the file and reads its contents into a single string using the `ft_create_map` function.
+ * 2. Opens the file and reads its contents into a single string using the 
+ * `ft_create_map` function.
  * 3. Splits the string into an array of lines using the `ft_split` function.
- * 4. Checks if the number of lines in the array matches the number of lines in the file.
+ * 4. Checks if the number of lines in the array matches the number of lines in 
+ * the file.
  * 5. Frees the memory used by the line string.
  * 6. Checks if the map is a rectangle using the `ft_is_rectangle` function.
- * 7. Initializes the `rows`, `columns`, and `collectibles` fields of the game's map.
+ * 7. Initializes the `rows`, `columns`, and `collectibles` fields of the game's
+ *  map.
  * 8. Calls the `ft_scan_map` function to scan the map for valid elements.
  *
  * @param game The game structure containing the map information.

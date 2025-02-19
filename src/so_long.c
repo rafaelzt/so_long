@@ -6,7 +6,7 @@
 /*   By: rzamolo- <rzamolo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 10:50:19 by rzamolo-          #+#    #+#             */
-/*   Updated: 2025/02/19 22:30:35 by rzamolo-         ###   ########.fr       */
+/*   Updated: 2025/02/19 22:32:28 by rzamolo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,8 @@ void	ft_game_cpy(t_game *game, t_aux *aux)
  * This function performs the following tasks:
  * - Validates the map file provided as an argument
  * - Copies the game state from the main game struct to an auxiliary struct
- * - Checks if there is a valid path from the player's starting position to the exit
+ * - Checks if there is a valid path from the player's starting position to 
+ * the exit
  * - Initializes the MLX library and creates a new window for the game
  * - Sets the size of the game window based on the map dimensions
  * - Sets the window title
