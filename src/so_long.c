@@ -6,7 +6,7 @@
 /*   By: rzamolo- <rzamolo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 10:50:19 by rzamolo-          #+#    #+#             */
-/*   Updated: 2025/02/19 22:32:28 by rzamolo-         ###   ########.fr       */
+/*   Updated: 2025/02/19 22:37:33 by rzamolo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,28 +32,7 @@ int	ft_exit_game(void *param)
 	exit(0);
 }
 
-/**
- * Handles keyboard input events for the game.
- *
- * This function is called whenever a key is pressed during the game. It
- * checks the key code and performs the corresponding action, such as
- * exiting the game or moving the player character.
- *
- * @param key The key code of the pressed key.
- * @param param A pointer to the main game struct.
- * @return 0 to indicate that the event has been handled.
- *//**
-  * Handles keyboard input events for the game.
-  *
-  * This function is called whenever a key is pressed during the game. It
-  * checks the key code and performs the corresponding action, such as
-  * exiting the game or moving the player character.
-  *
-  * @param key The key code of the pressed key.
-  * @param param A pointer to the main game struct.
-  * @return 0 to indicate that the event has been handled.
- 
-/**
+/*
  * Handles keyboard input events for the game.
  *
  * This function is called whenever a key is pressed during the game. It
@@ -86,8 +65,7 @@ int	ft_get_key(int key, void *param)
  * Copies the game state from the main game struct to an auxiliary struct.
  * This allows the game state to be preserved and used for pathfinding and
  * other operations without modifying the main game state.
-/**
-  *
+ *
  * @param game The main game struct containing the current game state.
  * @param aux The auxiliary struct to copy the game state to.
  */
