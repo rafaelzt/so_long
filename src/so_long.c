@@ -6,7 +6,7 @@
 /*   By: rzamolo- <rzamolo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 10:50:19 by rzamolo-          #+#    #+#             */
-/*   Updated: 2025/02/19 22:37:33 by rzamolo-         ###   ########.fr       */
+/*   Updated: 2025/02/20 22:42:33 by rzamolo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,6 +149,7 @@ int	main(int ac, char **av)
 	t_game	game;
 	t_aux	aux;
 
+	ProfilerStart("profile.out");  // Inicia profiling
 	if (ac == 2)
 	{
 		ft_init_game(&game, &aux, av[1]);
@@ -159,5 +160,6 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	perror("Number invalid of arguments!\n");
+	ProfilerStop();  // Para profiling
 	return (-1);
 }

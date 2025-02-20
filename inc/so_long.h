@@ -6,7 +6,7 @@
 /*   By: rzamolo- <rzamolo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 13:27:51 by rzamolo-          #+#    #+#             */
-/*   Updated: 2025/02/19 22:19:14 by rzamolo-         ###   ########.fr       */
+/*   Updated: 2025/02/20 22:41:56 by rzamolo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include <stddef.h>
 # include <unistd.h>
 # include <sys/stat.h>
+#include <gperftools/profiler.h>
 # include "libft.h"
 
 // Definição de constantes
@@ -42,6 +43,14 @@
 # define KEY_RIGHT_ARROW 65363
 # define KEY_ESC 65307
 
+/**
+ * @brief Auxiliary structure used for various purposes in the so_long project.
+ *
+ * This structure contains various fields that are used to store information
+ * about the game map, such as the starting and ending coordinates, the number
+ * of collectibles, the number of reachable collectibles, the number of rows and
+ * columns in the map, and the number of reachable exits.
+ */
 typedef struct s_aux
 {
 	int		start_x;
@@ -64,6 +73,13 @@ typedef struct s_win
 	int		height;
 }			t_win;
 
+/**
+ * @brief Auxiliary structure used to store information about an image.
+ *
+ * This structure contains various fields that are used to store information
+ * about an image, such as the window it is associated with, the sprite data,
+ * the image path, the image dimensions, and other metadata.
+ */
 typedef struct s_img
 {
 	t_win	win;

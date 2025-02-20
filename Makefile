@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rzamolo- <rzamolo-@student.42madrid.c      +#+  +:+       +#+         #
+#    By: rzamolo- <rzamolo-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 13:17:36 by rzamolo-          #+#    #+#              #
-#    Updated: 2024/11/02 21:14:17 by rzamolo-         ###   ########.fr        #
+#    Updated: 2025/02/20 23:01:26 by rzamolo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ CFLAGS = -Wall
 CFLAGS += -Werror
 CFLAGS += -Wextra
 CFLAGS += -O3
+CFLAGS += -g
 
 # MLX
 MLX_FLAGS = -lmlx -lm -lXext -lX11
@@ -53,7 +54,7 @@ RM = rm -f
 all: dirs $(MLX_LIB) $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT_DIR)
-	$(CC) $(CFLAGS) -o $@ $(OBJS) $(MLX_FLAGS) $(LIBFT_FLAGS)
+	$(CC) $(CFLAGS) -o $@ $(OBJS) $(MLX_FLAGS) $(LIBFT_FLAGS) -lprofiler
 
 $(O)%.o: $(S)%.c
 	@echo "Compiling $< into $@"
@@ -81,3 +82,13 @@ fclean: clean
 re: fclean all
 
 .PHONY: all $(NAME) dirs clean fclean 
+
+# Trying to use pprof to profile the program 
+# Have to install go and go install github.com/google/pprof@latest
+# Change source code to use pprof 
+# TOO MUCH TROUBLE
+# CPUPROFILE=profile.out ./bin./so_long assets/maps/4_map.ber
+
+# kcachegrind works better than pprof
+# sudo apt-get install valgrind kcachegrind
+# valgrind --tool=callgrind ./bin/so_long assets/maps/4_map.ber
