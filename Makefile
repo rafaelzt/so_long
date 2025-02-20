@@ -6,7 +6,7 @@
 #    By: rzamolo- <rzamolo-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 13:17:36 by rzamolo-          #+#    #+#              #
-#    Updated: 2025/02/20 23:01:26 by rzamolo-         ###   ########.fr        #
+#    Updated: 2025/02/20 23:05:55 by rzamolo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,3 +92,7 @@ re: fclean all
 # kcachegrind works better than pprof
 # sudo apt-get install valgrind kcachegrind
 # valgrind --tool=callgrind ./bin/so_long assets/maps/4_map.ber
+
+# pip install gprof2dot
+# gprof2dot -f callgrind callgrind.out.279800 | dot -Tsvg -o profile.svg
+# gprof2dot -f callgrind callgrind.out.279800 | dot -Tpng -o profile.png
