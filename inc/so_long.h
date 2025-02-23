@@ -23,7 +23,7 @@
 # include <stddef.h>
 # include <unistd.h>
 # include <sys/stat.h>
-#include <gperftools/profiler.h>
+# include <gperftools/profiler.h>
 # include "libft.h"
 
 // Definição de constantes
@@ -158,7 +158,6 @@ void	ft_put_map(t_game *game, int i, int j);
 void	ft_set_sprites_path(t_game *game);
 void	ft_load_game_sprites(t_game *game);
 
-// t_img	ft_new_image(t_win win, int width, int height);
 void	ft_free_map(char **map);
 size_t	ft_lenarr(char **map);
 size_t	ft_count_line(char *map);

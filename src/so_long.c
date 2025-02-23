@@ -149,7 +149,6 @@ int	main(int ac, char **av)
 	t_game	game;
 	t_aux	aux;
 
-	ProfilerStart("profile.out");  // Inicia profiling
 	if (ac == 2)
 	{
 		ft_init_game(&game, &aux, av[1]);
@@ -160,6 +159,5 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	perror("Number invalid of arguments!\n");
-	ProfilerStop();  // Para profiling
 	return (-1);
 }
