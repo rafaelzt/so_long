@@ -12,18 +12,6 @@
 
 #include "../inc/so_long.h"
 
-// t_img	ft_new_image(t_win win, int width, int height)
-// {
-// 	t_img	img;
-
-// 	img.win = win;
-// 	img.spr = mlx_new_image(win.addr, width, height);
-// 	img.addr = mlx_get_data_addr(img.spr, &img.bpp, &img.line_len, &img.endian);
-// 	img.width = width;
-// 	img.height = height;
-// 	return (img);
-// }
-
 /**
  * Frees the memory allocated for a 2D map array.
  *

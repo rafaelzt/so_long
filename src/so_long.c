@@ -32,7 +32,7 @@ int	ft_exit_game(void *param)
 	exit(0);
 }
 
-/*
+/**
  * Handles keyboard input events for the game.
  *
  * This function is called whenever a key is pressed during the game. It
