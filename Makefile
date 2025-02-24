@@ -54,7 +54,7 @@ RM = rm -f
 all: dirs $(MLX_LIB) $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT_DIR)
-	$(CC) $(CFLAGS) -o $@ $(OBJS) $(MLX_FLAGS) $(LIBFT_FLAGS) -lprofiler
+	$(CC) $(CFLAGS) -o $@ $(OBJS) $(MLX_FLAGS) $(LIBFT_FLAGS)
 
 $(O)%.o: $(S)%.c
 	@echo "Compiling $< into $@"

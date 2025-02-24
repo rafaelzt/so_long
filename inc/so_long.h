@@ -23,7 +23,6 @@
 # include <stddef.h>
 # include <unistd.h>
 # include <sys/stat.h>
-# include <gperftools/profiler.h>
 # include "libft.h"
 
 // Definição de constantes
