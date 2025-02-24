@@ -122,8 +122,8 @@ void	ft_init_game(t_game *game, t_aux *aux, char *av)
 		ft_free_map(game->map.map);
 	}
 	game->win.addr = mlx_init();
-	game->win.width = (ft_strlen(game->map.map[0])) * TILE_SIZE;
-	game->win.height = (ft_lenarr(game->map.map)) * TILE_SIZE;
+	game->win.width = TILE_SIZE * ft_strlen(game->map.map[0]);
+	game->win.height = TILE_SIZE * ft_lenarr(game->map.map);
 	game->win.win = mlx_new_window(game->win.addr, game->win.width,
 			game->win.height, "| rzamolo- | So_Long | rzamolo- |");
 	ft_set_sprites_path(game);

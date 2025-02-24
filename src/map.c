@@ -72,23 +72,23 @@ void	ft_scan_map(t_game *game, size_t len, size_t start, size_t end)
  */
 void	ft_is_rectangle(char **lines, size_t len)
 {
-	size_t	i;
-	size_t	j;
+	size_t	row;
+	size_t	column;
 
-	i = 0;
-	while (i < ft_lenarr(lines) - 1)
+	row = 0;
+	while (row < ft_lenarr(lines) - 1)
 	{
-		j = 0;
-		if (ft_strlen(lines[i]) != len)
+		column = 0;
+		if (ft_strlen(lines[row]) != len)
 			ft_error("Map format is invalid!\n");
-		while (lines[i][j] != '\0')
+		while (lines[row][column] != '\0')
 		{
-			if (lines[i][j] != '1' && (j == '0' || j == len - 1 || i == 0
-				|| i == ft_lenarr(lines) - 1))
+			if (lines[row][column] != '1' && (column == '0' || column == len - 1 || row == 0
+				|| row == ft_lenarr(lines) - 1))
 				ft_error("Map isn't close!\n");
-			++j;
+			++column;
 		}
-		++i;
+		++row;
 	}
 }
 
