@@ -18,32 +18,32 @@
  *
  * @param aux Pointer to the auxiliary data structure containing the game map 
  * and other state information.
- * @param x The current x-coordinate of the position being checked.
- * @param y The current y-coordinate of the position being checked.
+ * @param col The current x-coordinate of the position being checked.
+ * @param row The current y-coordinate of the position being checked.
  * @return 1 if a valid path exists, 0 otherwise.
  */
-int	ft_valid_path(t_aux *aux, int x, int y)
+int	ft_valid_path(t_aux *aux, int col, int row)
 {
-	if (aux->map[y][x] == '1')
+	if (aux->map[row][col] == '1')
 		return (0);
-	if (aux->map[y][x] == 'E')
+	if (aux->map[row][col] == 'E')
 	{
 		aux->reacheable_e++;
 		if (aux->collectibles == aux->reachable_c)
 			return (1);
 	}
-	if (aux->map[y][x] == 'C')
+	if (aux->map[row][col] == 'C')
 	{
 		aux->reachable_c++;
-		aux->map[y][x] = '0';
+		aux->map[row][col] = '0';
 		if (aux->collectibles == aux->reachable_c && aux->reacheable_e == 1)
 			return (1);
 	}
-	aux->map[y][x] = '1';
-	if ((x + 1 < aux->columns && ft_valid_path(aux, x + 1, y))
-		|| (x - 1 >= 0 && ft_valid_path(aux, x - 1, y))
-		|| (y + 1 < aux->rows && ft_valid_path(aux, x, y + 1))
-		|| (y - 1 >= 0 && ft_valid_path(aux, x, y - 1)))
+	aux->map[row][col] = '1';
+	if ((col + 1 < aux->columns && ft_valid_path(aux, col + 1, row))
+		|| (col - 1 >= 0 && ft_valid_path(aux, col - 1, row))
+		|| (row + 1 < aux->rows && ft_valid_path(aux, col, row + 1))
+		|| (row - 1 >= 0 && ft_valid_path(aux, col, row - 1)))
 		return (1);
 	return (0);
 }

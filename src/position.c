@@ -16,14 +16,14 @@
  * Sets the initial position of the player in the game.
  *
  * @param game The game struct containing the player's position.
- * @param x The x-coordinate of the player's starting position.
- * @param y The y-coordinate of the player's starting position.
+ * @param row The x-coordinate of the player's starting position.
+ * @param col The y-coordinate of the player's starting position.
  * @return 1 to indicate success.
  */
-int	ft_start_player_position(t_game *game, int x, int y)
+int	ft_start_player_position(t_game *game, int row, int col)
 {
-	game->player.x = x;
-	game->player.y = y;
+	game->player.x = row;
+	game->player.y = col;
 	return (1);
 }
 
@@ -31,13 +31,13 @@ int	ft_start_player_position(t_game *game, int x, int y)
  * Sets the position of the game exit.
  *
  * @param game The game struct containing the exit position.
- * @param x The x-coordinate of the exit position.
- * @param y The y-coordinate of the exit position.
+ * @param row The x-coordinate of the exit position.
+ * @param col The y-coordinate of the exit position.
  * @return 1 to indicate success.
  */
-int	ft_exit_position(t_game *game, int x, int y)
+int	ft_exit_position(t_game *game, int row, int col)
 {
-	game->exit.x = x;
-	game->exit.y = y;
+	game->exit.x = row;
+	game->exit.y = col;
 	return (1);
 }
