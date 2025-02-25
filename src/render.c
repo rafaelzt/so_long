@@ -78,7 +78,7 @@ void	ft_score(t_game *game)
 	write(1, "Moves: ", 7);
 	write(1, nbr, ft_strlen(nbr));
 	write(1, "\n", 1);
-	mlx_string_put(game->win.addr, game->win.win, 10, 15, 0x000000FF, nbr);
+	mlx_string_put(game->win.addr, game->win.win, 20, 27, 0x000000FF, nbr);
 	free(nbr);
 }
 
