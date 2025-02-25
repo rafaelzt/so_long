@@ -6,7 +6,7 @@
 #    By: rzamolo- <rzamolo-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 13:17:36 by rzamolo-          #+#    #+#              #
-#    Updated: 2025/02/20 23:05:55 by rzamolo-         ###   ########.fr        #
+#    Updated: 2025/02/25 16:28:25 by rzamolo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,12 @@ CFLAGS += -g
 
 
 # Libft
-LIBFT_DIR = /home/rzamolo-/Includes
+LIBFT_DIR = $(HOME)/Includes
 LIBFT = $(LIBFT_DIR)/libft.a
 LIBFT_FLAGS = -L$(LIBFT_DIR) -lft
 
 # MLX
-MLX_DIR = /home/rzamolo-/Includes
+MLX_DIR = $(HOME)/Includes
 MLX = $(MLX_DIR)/libmlx.a
 MLX_FLAGS = -lmlx -lm -lXext -lX11
 
