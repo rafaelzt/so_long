@@ -31,22 +31,22 @@
  */
 void	ft_scan_map(t_game *game, size_t len, size_t start, size_t end)
 {
-	size_t	i;
-	size_t	j;
+	size_t	row;
+	size_t	col;
 
-	i = -1;
-	while (++i < ft_lenarr(game->map.map))
+	row = -1;
+	while (++row < ft_lenarr(game->map.map))
 	{
-		j = -1;
-		while (++j < len)
+		col = -1;
+		while (++col < len)
 		{
-			if (game->map.map[i][j] == '0' || game->map.map[i][j] == '1')
+			if (game->map.map[row][col] == '0' || game->map.map[row][col] == '1')
 				continue ;
-			else if (game->map.map[i][j] == 'P')
-				start += ft_start_player_position(game, i, j);
-			else if (game->map.map[i][j] == 'E')
-				end += ft_exit_position(game, i, j);
-			else if (game->map.map[i][j] == 'C')
+			else if (game->map.map[row][col] == 'P')
+				start += ft_start_player_position(game, row, col);
+			else if (game->map.map[row][col] == 'E')
+				end += ft_exit_position(game, row, col);
+			else if (game->map.map[row][col] == 'C')
 				game->map.collectibles++;
 			else
 				ft_error("Invalid characters!\n");
@@ -83,7 +83,8 @@ void	ft_is_rectangle(char **lines, size_t len)
 			ft_error("Map format is invalid!\n");
 		while (lines[row][column] != '\0')
 		{
-			if (lines[row][column] != '1' && (column == '0' || column == len - 1 || row == 0
+			if (lines[row][column] != '1' && (column == '0'
+				|| column == len - 1 || row == 0
 				|| row == ft_lenarr(lines) - 1))
 				ft_error("Map isn't close!\n");
 			++column;

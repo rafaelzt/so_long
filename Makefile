@@ -83,14 +83,6 @@ re: fclean all
 
 .PHONY: all $(NAME) dirs clean fclean 
 
-# Trying to use pprof to profile the program 
-# Have to install go and go install github.com/google/pprof@latest
-# Change source code to use pprof 
-# TOO MUCH TROUBLE
-# CPUPROFILE=profile.out ./bin./so_long assets/maps/4_map.ber
-
-# kcachegrind works better than pprof
-# sudo apt-get install valgrind kcachegrind
 # valgrind --tool=callgrind ./bin/so_long assets/maps/4_map.ber
 
 # pip install gprof2dot

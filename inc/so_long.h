@@ -152,7 +152,7 @@ void	ft_render_sprites(t_img *spr, t_game *game);
 void	ft_render_player(t_game *game);
 void	ft_render_map(t_game *game);
 void	ft_score(t_game *game);
-void	ft_put_map(t_game *game, int i, int j);
+void	ft_put_map(t_game *game, int row, int col);
 
 void	ft_set_sprites_path(t_game *game);
 void	ft_load_game_sprites(t_game *game);

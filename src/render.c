@@ -22,34 +22,34 @@
  *
  * @param game Pointer to the game struct containing the game state and 
  * resources.
- * @param i The row index of the tile to be rendered.
- * @param j The column index of the tile to be rendered.
+ * @param row The row index of the tile to be rendered.
+ * @param col The column index of the tile to be rendered.
  */
-void	ft_put_map(t_game *game, int i, int j)
+void	ft_put_map(t_game *game, int row, int col)
 {
-	if (game->map.map[i][j] == '1')
+	if (game->map.map[row][col] == '1')
 		mlx_put_image_to_window(game->win.addr, game->win.win,
-			game->sprites.wall.spr, (j * TILE_SIZE), (i * TILE_SIZE));
+			game->sprites.wall.spr, (col * TILE_SIZE), (row * TILE_SIZE));
 	else
 	{
 		mlx_put_image_to_window(game->win.addr, game->win.win,
-			game->sprites.floor.spr, (j * TILE_SIZE), (i * TILE_SIZE));
-		if (game->map.map[i][j] == 'C')
+			game->sprites.floor.spr, (col * TILE_SIZE), (row * TILE_SIZE));
+		if (game->map.map[row][col] == 'C')
 		{
 			mlx_put_image_to_window(game->win.addr, game->win.win,
-				game->sprites.collectible.spr, (j * TILE_SIZE),
-				(i * TILE_SIZE));
+				game->sprites.collectible.spr, (col * TILE_SIZE),
+				(row * TILE_SIZE));
 		}
-		else if (game->map.map[i][j] == 'P')
+		else if (game->map.map[row][col] == 'P')
 		{
-			game->player.x = j;
-			game->player.y = i;
+			game->player.x = col;
+			game->player.y = row;
 			mlx_put_image_to_window(game->win.addr, game->win.win,
-				game->player.img.spr, (j * TILE_SIZE), (i * TILE_SIZE));
+				game->player.img.spr, (col * TILE_SIZE), (row * TILE_SIZE));
 		}
-		else if (game->map.map[i][j] == 'E')
+		else if (game->map.map[row][col] == 'E')
 			mlx_put_image_to_window(game->win.addr, game->win.win,
-				game->sprites.exit.spr, (j * TILE_SIZE), (i * TILE_SIZE));
+				game->sprites.exit.spr, (col * TILE_SIZE), (row * TILE_SIZE));
 	}
 }
 
@@ -96,21 +96,21 @@ void	ft_score(t_game *game)
  */
 void	ft_render_map(t_game *game)
 {
-	int	i;
-	int	j;
+	int	row;
+	int	col;
 
-	i = 0;
+	row = 0;
 	game->player.collectibles = 0;
 	game->player.moves = 0;
-	while (i < game->map.rows)
+	while (row < game->map.rows)
 	{
-		j = 0;
-		while (j <= game->map.columns)
+		col = 0;
+		while (col <= game->map.columns)
 		{
-			ft_put_map(game, i, j),
-			++j;
+			ft_put_map(game, row, col),
+			++col;
 		}
-		++i;
+		++row;
 	}
 	game->player.x_old = game->player.x;
 	game->player.y_old = game->player.y;
