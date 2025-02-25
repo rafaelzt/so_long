@@ -18,12 +18,11 @@
 # include <errno.h>
 # include <fcntl.h>
 # include <limits.h>
-# include <mlx.h>	// MiniLibX
-// # include "../mlx/mlx.h"
+# include "/home/rzamolo-/Includes/mlx.h"
 # include <stddef.h>
 # include <unistd.h>
 # include <sys/stat.h>
-# include "libft.h"
+# include "/home/rzamolo-/Includes/libft.h"
 
 // Definição de constantes
 # define WIN_WIDTH 1024
@@ -41,6 +40,8 @@
 # define KEY_DOWN_ARROW 65364
 # define KEY_RIGHT_ARROW 65363
 # define KEY_ESC 65307
+
+# define ASSETS_PATH "/home/rzamolo-/Documents/42/so_long/assets/"
 
 /**
  * @brief Auxiliary structure used for various purposes in the so_long project.

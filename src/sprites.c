@@ -41,15 +41,10 @@ void	ft_load_game_sprites(t_game *game)
  */
 void	ft_set_sprites_path(t_game *game)
 {
-	game->sprites.wall.path = \
-"/home/rzt/Documents/42/so_long/assets/images/wall.xpm";
-	game->sprites.floor.path = \
-"/home/rzt/Documents/42/so_long/assets/images/floor.xpm";
-	game->sprites.collectible.path = \
-"/home/rzt/Documents/42/so_long/assets/images/collectible.xpm";
-	game->sprites.exit.path = \
-"/home/rzt/Documents/42/so_long/assets/images/exit.xpm";
-	game->player.img.path = \
-"/home/rzt/Documents/42/so_long/assets/images/player.xpm";
+	game->sprites.wall.path = ASSETS_PATH "images/wall.xpm";
+	game->sprites.floor.path = ASSETS_PATH "images/floor.xpm";
+	game->sprites.collectible.path = ASSETS_PATH "images/collectible.xpm";
+	game->sprites.exit.path = ASSETS_PATH "images/exit.xpm";
+	game->player.img.path = ASSETS_PATH "images/player.xpm";
 	ft_load_game_sprites(game);
 }

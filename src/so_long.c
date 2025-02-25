@@ -6,7 +6,7 @@
 /*   By: rzamolo- <rzamolo-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 10:50:19 by rzamolo-          #+#    #+#             */
-/*   Updated: 2025/02/20 22:42:33 by rzamolo-         ###   ########.fr       */
+/*   Updated: 2025/02/25 16:25:43 by rzamolo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ void	ft_init_game(t_game *game, t_aux *aux, char *av)
 	ft_game_cpy(game, aux);
 	if (!ft_valid_path(aux, aux->start_x, aux->start_y))
 	{
-		ft_error("There is no route to complete the map!\n");
+		ft_error("There is no route to complete the map!");
 		ft_free_map(game->map.map);
 	}
 	game->win.addr = mlx_init();
@@ -158,6 +158,6 @@ int	main(int ac, char **av)
 		ft_free_map(game.map.map);
 		return (0);
 	}
-	perror("Number invalid of arguments!\n");
+	perror("Number invalid of arguments!");
 	return (-1);
 }

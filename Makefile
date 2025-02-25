@@ -6,7 +6,7 @@
 #    By: rzamolo- <rzamolo-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 13:17:36 by rzamolo-          #+#    #+#              #
-#    Updated: 2025/02/20 23:05:55 by rzamolo-         ###   ########.fr        #
+#    Updated: 2025/02/25 16:28:25 by rzamolo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,20 +17,23 @@ CFLAGS += -Wextra
 CFLAGS += -O3
 CFLAGS += -g
 
-# MLX
-MLX_FLAGS = -lmlx -lm -lXext -lX11
 
 # Libft
-LIBFT_DIR = inc
+LIBFT_DIR = $(HOME)/Includes
 LIBFT = $(LIBFT_DIR)/libft.a
 LIBFT_FLAGS = -L$(LIBFT_DIR) -lft
+
+# MLX
+MLX_DIR = $(HOME)/Includes
+MLX = $(MLX_DIR)/libmlx.a
+MLX_FLAGS = -lmlx -lm -lXext -lX11
+
 
 A = assets/maps assets/images
 B = bin/
 I = inc/
 O = obj/
 S = src/
-T = tst/
 
 
 # So_long: Source files
@@ -51,27 +54,16 @@ NAME = $(B)so_long
 
 RM = rm -f
 
-all: dirs $(MLX_LIB) $(NAME)
+all: $(MLX) $(NAME)
 
-$(NAME): $(OBJS) $(LIBFT_DIR)
+$(NAME): $(OBJS)
+	@mkdir -p $B
 	$(CC) $(CFLAGS) -o $@ $(OBJS) $(MLX_FLAGS) $(LIBFT_FLAGS)
 
 $(O)%.o: $(S)%.c
 	@echo "Compiling $< into $@"
+	@mkdir -p $O
 	$(CC) $(CFLAGS) -c -o $@ $< $(INCLUDES)
-
-$(MLX_LIB):
-	$(MAKE) -C $(MLX_DIR)
-
-debug: CFLAGS += -g
-debug: fclean all
-
-keys:
-	$(CC) $Scapture_keycode.c -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11
-
-dirs:
-	@echo "Creating directories if doesn't exist"
-	mkdir -p $(B) $(I) $(O) $(S) $(T)
 
 clean:
 	$(RM) $(O)*
@@ -81,7 +73,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all $(NAME) dirs clean fclean 
+.PHONY: all clean fclean re
 
 # valgrind --tool=callgrind ./bin/so_long assets/maps/4_map.ber
 
